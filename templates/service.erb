@@ -1,0 +1,36 @@
+service <%= @name %>
+{
+<% if @bind != '' -%>
+	bind		= <%= @bind %>
+<% end -%>
+<% if @type != '' -%>
+	type		= <%= @type %>
+<% end -%>
+	id		    = <%= @id %>
+	port        = <%= @port %>
+	socket_type	= <%= @socket_type %>
+	protocol	= <%= @protocol %>
+	flags		= <%= @flags %>
+	wait		= <%= @wait %>
+	user		= <%= @user %>
+<% if @group != '' -%>
+	group		= <%= @group %>
+<% end -%>
+<% if @passenv != '' -%>
+	passenv		= <%= @passenv %>
+<% end -%>
+	server		= <%= @server %>
+<% if @server_args != '' -%>
+	server_args	= <%= @server_args %>
+<% end -%>
+	nice		= <%= @nice %>
+	instances	= <%= @instances %>
+	per_source	= <%= @per_source %>
+	cps		= <%= @cps %>
+<% if @log_on_success != '' -%>
+	log_on_success  = <%= @log_on_success %>
+<% end -%>
+<% if @log_on_failure != '' -%>
+	log_on_failure  += <%= @log_on_failure %>
+<% end -%>
+}
